@@ -9,10 +9,16 @@ title = "Tabela_de_Tutores"
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
-creds = ServiceAccountCredentials.from_json_keyfile_name(filename=fileName, scopes=scope)
 
+cred_dict = st.secrets["gcp_service_account"]
+creds_dict = dict(cred_dict)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scopes=scope)
 client = gspread.authorize(creds)
-planilha = client.open_by_key(idFile)
+
+#creds = ServiceAccountCredentials.from_json_keyfile_name(filename=fileName, scopes=scope)
+
+#client = gspread.authorize(creds)
+#planilha = client.open_by_key(idFile)
 
 
 
