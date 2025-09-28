@@ -18,7 +18,7 @@ client = gspread.authorize(creds)
 #creds = ServiceAccountCredentials.from_json_keyfile_name(filename=fileName, scopes=scope)
 
 #client = gspread.authorize(creds)
-#planilha = client.open_by_key(idFile)
+planilha = client.open_by_key(idFile)
 
 
 
